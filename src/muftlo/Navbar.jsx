@@ -41,7 +41,7 @@ export default function Navbar() {
               href="/"
               className="inline-flex cursor-pointer -mt-1 items-center gap-2"
             >
-<img src={rdLogo.url} alt="R&D Software Solutions" className="h-9 md:h-10 w-auto" /><span className="text-base md:text-lg font-bold leading-tight text-white">R&amp;D <span className="text-orange-400">Software Solutions</span></span>
+<img src={rdLogo.url} alt="R&D Software Solutions" className="h-10 w-auto rounded-lg bg-white px-2 py-1" /><span className="text-base md:text-lg font-bold leading-tight text-white">R&amp;D <span className="text-orange-400">Software Solutions</span></span>
             </Link>
           </NavbarLogo>
 
@@ -76,7 +76,7 @@ export default function Navbar() {
                 href="/"
                 className="inline-flex items-center gap-2"
               >
-  <img src={rdLogo.url} alt="R&D Software Solutions" className="h-9 md:h-10 w-auto" /><span className="text-base md:text-lg font-bold leading-tight text-white">R&amp;D <span className="text-orange-400">Software Solutions</span></span>
+  <img src={rdLogo.url} alt="R&D Software Solutions" className="h-10 w-auto rounded-lg bg-white px-2 py-1" /><span className="text-base md:text-lg font-bold leading-tight text-white">R&amp;D <span className="text-orange-400">Software Solutions</span></span>
               </Link>
             </NavbarLogo>
             <MobileNavToggle

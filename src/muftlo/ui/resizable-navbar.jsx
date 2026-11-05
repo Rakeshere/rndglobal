@@ -209,7 +209,7 @@ export const NavbarLogo = () => {
       href="/"
       className="flex cursor-pointer z-10 items-center gap-2 px-2 text-2xl font-extrabold tracking-tight"
     >
-      <img src={rdLogo.url} alt="R&D Software Solutions" className="h-9 w-auto" />
+      <img src={rdLogo.url} alt="R&D Software Solutions" className="h-10 w-auto rounded-lg bg-white px-2 py-1" />
     </Link>
   );
 };
