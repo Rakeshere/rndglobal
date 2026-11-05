@@ -41,7 +41,7 @@ export default function Navbar() {
               href="/"
               className="inline-flex cursor-pointer -mt-1 items-center gap-2"
             >
-<img src={rdLogo.url} alt="R&D Software Solutions" className="h-10 w-auto" /><span className="text-base md:text-lg font-bold leading-tight text-white">R&amp;D <span className="text-orange-400">Software Solutions</span></span>
+<img src={rdLogo.url} alt="R&D Software Solutions" className="h-10 w-auto" /><span className="text-base md:text-lg font-bold leading-tight text-brand-navy">R&amp;D <span className="text-brand-orange">Software Solutions</span></span>
             </Link>
           </NavbarLogo>
 
@@ -59,8 +59,8 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <Link
               href="/contact"
-              className={`relative z-10 bg-gradient-to-r from-blue-800 to-blue-600 text-white font-medium px-5 py-2 rounded-full flex items-center gap-2 transition-all duration-500 shadow-md hover:shadow-blue-600/40 ${
-                pathname === "/contact" ? "ring-2 ring-blue-400" : ""
+              className={`relative z-10 bg-gradient-to-r from-brand-navy to-brand-navy text-white hover:from-brand-orange hover:to-brand-orange font-medium px-5 py-2 rounded-full flex items-center gap-2 transition-all duration-500 shadow-md hover:shadow-blue-600/40 ${
+                pathname === "/contact" ? "ring-2 ring-brand-orange" : ""
               }`}
             >
               Contact Us
@@ -76,7 +76,7 @@ export default function Navbar() {
                 href="/"
                 className="inline-flex items-center gap-2"
               >
-  <img src={rdLogo.url} alt="R&D Software Solutions" className="h-10 w-auto" /><span className="text-base md:text-lg font-bold leading-tight text-white">R&amp;D <span className="text-orange-400">Software Solutions</span></span>
+  <img src={rdLogo.url} alt="R&D Software Solutions" className="h-10 w-auto" /><span className="text-base md:text-lg font-bold leading-tight text-brand-navy">R&amp;D <span className="text-brand-orange">Software Solutions</span></span>
               </Link>
             </NavbarLogo>
             <MobileNavToggle
@@ -103,10 +103,10 @@ export default function Navbar() {
                       key={link}
                       href={link}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`block px-4 py-2 rounded-full text-white font-medium transition-all duration-300 ${
+                      className={`block px-4 py-2 rounded-full text-brand-navy font-medium transition-all duration-300 ${
                         pathname === link
-                          ? "bg-blue-700 shadow-md shadow-blue-600/40"
-                          : "hover:bg-blue-800 hover:text-white"
+                          ? "bg-brand-orange text-white shadow-md"
+                          : "hover:bg-brand-orange/15"
                       }`}
                     >
                       {name}

@@ -51,9 +51,9 @@ export const NavBody = ({ children, className, visible }) => {
           ? "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
           : "none",
         width: visible ? "75%" : "100%",
-        borderColor: visible ? "transparent" : "rgba(255,255,255,0.2)",
+        borderColor: "rgba(11,23,51,0.08)",
         borderWidth: visible ? "0px" : "1px",
-        backgroundColor: visible ? "rgba(255,255,255,0.2)" : "rgba(0,0,0,0.2)",
+        backgroundColor: visible ? "rgba(250,247,242,0.92)" : "rgba(250,247,242,1)",
         y: visible ? 20 : 0,
       }}
       transition={{
@@ -66,7 +66,7 @@ export const NavBody = ({ children, className, visible }) => {
       }}
       className={cn(
         "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-2 lg:flex dark:bg-transparent",
-        visible && "bg-white/80 dark:bg-neutral-950/80",
+        
         className
       )}
     >
@@ -102,7 +102,7 @@ export const NavItems = ({ items, className, onItemClick }) => {
             {(isHovered || isActive) && (
               <motion.div
                 layoutId="hovered"
-                className="absolute inset-0 rounded-full bg-white dark:bg-neutral-800"
+                className="absolute inset-0 rounded-full bg-brand-orange"
                 transition={{
                   type: "spring",
                   stiffness: 200,
@@ -120,7 +120,7 @@ export const NavItems = ({ items, className, onItemClick }) => {
             <span
               className={cn(
                 "relative z-20 transition-colors duration-200",
-                isHovered || isActive ? "text-black" : "text-white"
+                isHovered || isActive ? "text-white" : "text-brand-navy"
               )}
             >
               {item.name}
@@ -137,15 +137,15 @@ export const MobileNav = ({ children, className, visible }) => {
     <motion.div
       animate={{
         backdropFilter: visible ? "blur(16px)" : "blur(16px)",
-        backgroundColor: visible ? "rgba(255, 255, 255, 0.05)" : "transparent",
+        backgroundColor: "rgba(250,247,242,0.96)",
         borderRadius: visible ? "2rem" : "2rem",
         scale: visible ? 1 : 0.98,
         y: visible ? 10 : 0,
       }}
       transition={{ type: "spring", stiffness: 200, damping: 25 }}
       className={cn(
-        "relative z-50 mx-auto flex w-[100%] flex-col items-center justify-between px-4 py-2 backdrop-blur-md border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.1)] lg:hidden rounded-full",
-        visible && "bg-white/5",
+        "relative z-50 mx-auto flex w-[100%] flex-col items-center justify-between px-4 py-2 border border-brand-navy/10 shadow-md lg:hidden rounded-full",
+        
         className
       )}
     >
@@ -177,7 +177,7 @@ export const MobileNavMenu = ({ children, className, isOpen }) => {
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
           className={cn(
-            "absolute top-[4.2rem] left-1/2 -translate-x-1/2 z-40 flex w-[100%] flex-col items-center gap-4 rounded-2xl bg-black/90 backdrop-blur-xl border border-white/10 p-6 shadow-[0_0_20px_rgba(0,0,0,0.4)] text-white",
+            "absolute top-[4.2rem] left-1/2 -translate-x-1/2 z-40 flex w-[100%] flex-col items-center gap-4 rounded-2xl bg-brand-cream border border-brand-navy/10 p-6 shadow-lg text-brand-navy",
             className
           )}
         >
@@ -195,9 +195,9 @@ export const MobileNavToggle = ({ isOpen, onClick }) => {
       className="p-2 cursor-pointer active:scale-90 transition-all duration-200"
     >
       {isOpen ? (
-        <IconX className="text-white w-6 h-6" />
+        <IconX className="text-brand-navy w-6 h-6" />
       ) : (
-        <IconMenu2 className="text-white w-6 h-6" />
+        <IconMenu2 className="text-brand-navy w-6 h-6" />
       )}
     </button>
   );

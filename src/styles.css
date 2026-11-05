@@ -4,6 +4,32 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Brand: R&D navy + orange. Blue accents across the site are remapped to the logo orange. */
+@theme {
+  --font-sans: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --color-brand-navy: #0b1733;
+  --color-brand-orange: #f7931e;
+  --color-brand-cream: #faf7f2;
+  --color-blue-50: #fff6eb;
+  --color-blue-100: #ffe9cc;
+  --color-blue-200: #ffd199;
+  --color-blue-300: #ffb866;
+  --color-blue-400: #ffa53d;
+  --color-blue-500: #f7931e;
+  --color-blue-600: #ee7d0c;
+  --color-blue-700: #d96a06;
+  --color-blue-800: #b35507;
+  --color-blue-900: #8a420a;
+  --color-blue-950: #4d2405;
+  /* One consistent type scale: very large headings are capped */
+  --text-xs: 0.8125rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3rem;
+  --text-7xl: 3.5rem;
+  --text-8xl: 3.5rem;
+  --text-9xl: 3.5rem;
+}
+
 body {
     overflow-x: hidden;
 }
@@ -138,7 +164,9 @@ body {
 }
 
 body {
-  background-color: rgb(2, 6, 23);
+  background-color: #0b1733;
+  font-family: var(--font-sans);
+  font-size: 16px;
 }
 /* 
 

@@ -14,12 +14,12 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0B0B0F] text-gray-300 py-12 px-6 md:px-12">
+    <footer className="bg-brand-navy text-gray-300 py-12 px-6 md:px-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 border-b border-gray-700 pb-10">
         <div className="-mt-3">
           <div className="flex items-center gap-2 mb-2">
             <img src={rdLogo.url} alt="R&D Software Solutions" className="h-14 w-auto" />
-            <h1 className="text-xl font-bold leading-tight text-white">R&amp;D <span className="text-orange-400">Software Solutions</span></h1>
+            <h1 className="text-xl font-bold leading-tight text-white">R&amp;D <span className="text-brand-orange">Software Solutions</span></h1>
           </div>
 
           <h2 className="text-lg font-semibold text-blue-400 mb-2">Reach Us</h2>
