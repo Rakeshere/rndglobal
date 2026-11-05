@@ -86,6 +86,9 @@ body {
 }
 
 :root {
+    --brand-stories-background: linear-gradient(160deg, #0b1733 12%, #243552 60%, #704d34 85%, #b77538 100%);
+    --brand-story-shadow: 0 14px 40px #0b173326;
+    --brand-story-caption: linear-gradient(transparent, #0b1733cc);
     --radius: 0.625rem;
     --background: oklch(1 0 0);
     --foreground: oklch(0.145 0 0);

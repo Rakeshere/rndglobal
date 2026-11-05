@@ -1,122 +1,71 @@
-
-import React from "react";
+import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
 import "./Slider.css";
 
-// Import logos
-import Image1 from "@/assests/Acu-Amrit-Logo.jpg";
-import Image2 from "@/assests/Address-Roof-Logo.png";
-import Image3 from "@/assests/Advent-Aircon-Logo.png";
-import Image4 from "@/assests/AJ-Realty.png";
-import Image5 from "@/assests/Bastet-Logo.png";
-import Image6 from "@/assests/CLASS-Logo.png";
-import Image7 from "@/assests/CLATPREP-Logo.png";
-import Image8 from "@/assests/Crudefit-Logo.png";
-import Image9 from "@/assests/Dalchini-Logo.png";
-import Image10 from "@/assests/dotSquare.png";
-import Image11 from "@/assests/ENT-DOCTOR-LOGO.png";
-import Image12 from "@/assests/Experts-Advises-Logo.png";
-import Image13 from "@/assests/Force-Lifts-Final-Logo.png";
-import Image14 from "@/assests/Great-Indian-Dhaba-Logo.png";
-import Image15 from "@/assests/Home-Mark-Logo.png";
-import Image16 from "@/assests/Jairaj-Buildon-logo.png";
-import Image17 from "@/assests/keys-90.png";
-import Image18 from "@/assests/Logo-Reliant.png";
-import Image19 from "@/assests/Miracle-Enclave-Logo.png";
-import Image20 from "@/assests/Oblong-Logo.jpg";
-import Image21 from "@/assests/Opel-Home-Logo.png";
-import Image22 from "@/assests/OPS-LOGO-p1.png";
-import Image23 from "@/assests/Parth-sarthi-logo-2.png";
-import Image24 from "@/assests/Patanjali-logo.png";
-import Image25 from "@/assests/quality-king-logo-PNG.png";
-import Image26 from "@/assests/RNT-Logo.png";
-import Image27 from "@/assests/sankalp-logo.png";
-import Image28 from "@/assests/sarathi-Logo.png";
-import Image29 from "@/assests/Search-Abode-Logo.png";
-import Image30 from "@/assests/SHRI-TAGORE-COLLEGE-LOGO.jpg";
-import Image31 from "@/assests/Sondaryam-Logo.png";
-import Image32 from "@/assests/Stone-Nest-Constructions-Logo.png";
-import Image33 from "@/assests/Times-Jaipur-Logo.png";
-import Image34 from "@/assests/Wood-Antique-Logo.png";
-import Image35 from "@/assests/Zivontique-Logo-01.png";
-import Image36 from "@/assests/Logo-Pastelli.png";
-import Image37 from "@/assests/TRIMAX-LOGO.png";
-import Image38 from "@/assests/SiddhiHomes.png";
-import Image39 from "@/assests/gkb.png"
-
-const allPartners = [
-  Image10,
-  Image29,
-  Image24,
-  Image18,
-  Image17,
-  Image36,
-  Image21,
-  Image33,
-  Image27,
-  Image19,
-  Image23,
-  Image26,
-  Image37,
-  Image31,
-  Image39,
-  Image11,
-  Image13,
-  Image8,
-  Image3,
-  Image38,
+const stories = [
+  { name: "Dotsquares", image: "/Dots.jpg", title: "Company profile video production", quote: "Working with R&D Software Solutions has been a fantastic experience. They handled our branding, promotions, and complete marketing with full dedication and creativity.", person: "Ashish Mantri", role: "Vice President" },
+  { name: "Pastelli", image: "/Pastelli.jpg", title: "Fashion brand marketing", quote: "Thanks to R&D Software Solutions, Pastelli’s online presence and sales have grown tremendously. Their end-to-end support in marketing and web management is truly exceptional.", person: "Arohi Mehta", role: "Owner" },
+  { name: "Reliant Housing", image: "/Reliant.jpg", title: "Real estate digital marketing", quote: "Working with R&D Software Solutions has transformed our marketing efforts. Their all-in-one solutions and innovative approach in real estate promotions have delivered excellent results for Reliant Housing.", person: "Rakesh Mahal", role: "Director" },
+  { name: "Sondaryam", image: "/Sondaryam.jpg", title: "Podcast & multi-platform branding", quote: "We are impressed with R&D Software Solutions’s innovation and dedication. From complete 360 product visuals to engaging marketing podcasts, they handled everything flawlessly. Great team to work with!", person: "Satyendra Parnami", role: "Director" },
+  { name: "Force Lifts", image: "/ForceLifts.jpg", title: "Digital branding & content production", quote: "Outstanding service by R&D Software Solutions! They handled everything from elevations to full marketing strategy, helping Force Lifts stand out in the market. Highly recommended!", person: "Neeraj Sharma", role: "Director" },
 ];
 
-const MuftloGrid = () => {
+export default function BrandStories() {
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const touchStart = useRef(null);
+
+  useEffect(() => {
+    if (paused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = window.setInterval(() => setActive((value) => (value + 1) % stories.length), 5000);
+    return () => window.clearInterval(timer);
+  }, [paused]);
+
   return (
-    <div className="w-full flex justify-center py-10 px-4">
-      <div
-        className="
-          relative w-full max-w-7xl
-          rounded-3xl 
-          bg-gradient-to-b from-[#9d9fa1] via-[#c5c5ca] to-[#aaaaad]
-          shadow-[0_0_50px_rgba(255,255,255,0.03)]
-          p-8 sm:p-10
-        "
-      >
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-white text-center mb-10">
-          Trusted by <span className="text-blue-900">Top Brands</span>
-        </h2>
-
-        <div
-          className="
-            grid 
-            grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5
-            gap-6 sm:gap-8
-            items-center justify-center
-          "
-        >
-          {allPartners.map((partner, index) => (
-            <div
-              key={index}
-              className="
-                flex justify-center items-center
-                bg-white/90
-                p-4 sm:p-6 rounded-xl
-                transition-all duration-500 ease-in-out
-                hover:scale-105 hover:shadow-lg hover:shadow-white/10
-              "
-            >
-              <img
-                src={partner.src ?? partner}
-                alt={`Partner ${index + 1}`}
-                className="
-                  h-16 sm:h-20 md:h-24 
-                  object-contain 
-                  opacity-90 hover:opacity-100
-                  transition duration-500
-                "
-              />
-            </div>
-          ))}
-        </div>
+    <section className="brand-stories" aria-labelledby="brand-stories-title" aria-roledescription="carousel"
+      onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}
+      onFocusCapture={() => setPaused(true)} onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setPaused(false); }}
+      onTouchStart={(event) => { touchStart.current = event.touches[0]?.clientX ?? null; setPaused(true); }}
+      onTouchEnd={(event) => {
+        const end = event.changedTouches[0]?.clientX;
+        if (touchStart.current !== null && end !== undefined && Math.abs(end - touchStart.current) > 35) {
+          setActive((value) => (value + (end < touchStart.current ? 1 : -1) + stories.length) % stories.length);
+        }
+        touchStart.current = null;
+        setPaused(false);
+      }}
+      onKeyDown={(event) => {
+        if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+          event.preventDefault();
+          setActive((value) => (value + (event.key === "ArrowRight" ? 1 : -1) + stories.length) % stories.length);
+        }
+      }}>
+      <h2 id="brand-stories-title" className="text-4xl md:text-5xl font-bold">Trusted by<br /><span>Top Brands</span></h2>
+      <div className="brand-stories-stage">
+        {stories.map((story, index) => {
+          const offset = (index - active + stories.length + 2) % stories.length - 2;
+          const selected = offset === 0;
+          return (
+            <article key={story.name} className="brand-story" data-slot={offset} aria-hidden={!selected}>
+              <div className="brand-story-copy">
+                <h3>{story.title}</h3>
+                <div>
+                  <blockquote>“{story.quote}”</blockquote>
+                  <p className="brand-story-author">{story.person}<span>{story.role}</span></p>
+                </div>
+              </div>
+              <div className="brand-story-image">
+                <img src={story.image} alt={story.name} draggable="false" />
+                <strong>{story.name}</strong>
+              </div>
+              {!selected && <Button variant="ghost" className="brand-story-select" tabIndex={-1} aria-label={`Show ${story.name}`} onClick={() => setActive(index)} />}
+            </article>
+          );
+        })}
       </div>
-    </div>
+      <div className="brand-story-dots" role="group" aria-label="Choose a brand">
+        {stories.map((story, index) => <Button key={story.name} variant="ghost" size="icon" className="brand-story-dot" aria-label={`Show ${story.name}`} aria-pressed={index === active} onClick={() => setActive(index)}><span /></Button>)}
+      </div>
+    </section>
   );
-};
-
-export default MuftloGrid;
+}

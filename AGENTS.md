@@ -11,3 +11,4 @@
 
 - Imported Muftlo site code lives in src/muftlo (pages in src/muftlo/pages, thin route files in src/routes); src/muftlo/next/* shims replace next/link, next/image, next/navigation so ported components stay close to the original.
 - Keep lucide-react pinned at 0.542.0: newer versions removed brand icons (Facebook, Instagram, etc.) the footer uses.
+- The homepage brand carousel stays in the existing Slider module and reuses existing customer images and testimonials, keeping this section independent from the other homepage sections.
