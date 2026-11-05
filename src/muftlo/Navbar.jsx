@@ -1,3 +1,4 @@
+import rdLogo from "@/assets/rd-logo.png.asset.json";
 
 
 import {
@@ -38,9 +39,9 @@ export default function Navbar() {
           <NavbarLogo>
             <Link
               href="/"
-              className="inline-flex cursor-pointer -mt-1 items-baseline gap-1 text-2xl md:text-3xl font-extrabold text-blue-700"
+              className="inline-flex cursor-pointer -mt-1 items-center gap-2"
             >
-              R&D Software Solutions
+<img src={rdLogo.url} alt="R&D Software Solutions" className="h-9 md:h-10 w-auto" /><span className="text-base md:text-lg font-bold leading-tight text-white">R&amp;D <span className="text-orange-400">Software Solutions</span></span>
             </Link>
           </NavbarLogo>
 
@@ -73,9 +74,9 @@ export default function Navbar() {
             <NavbarLogo>
               <Link
                 href="/"
-                className="inline-flex items-baseline gap-1 text-2xl font-extrabold text-blue-800"
+                className="inline-flex items-center gap-2"
               >
-                R&D Software Solutions
+  <img src={rdLogo.url} alt="R&D Software Solutions" className="h-9 md:h-10 w-auto" /><span className="text-base md:text-lg font-bold leading-tight text-white">R&amp;D <span className="text-orange-400">Software Solutions</span></span>
               </Link>
             </NavbarLogo>
             <MobileNavToggle
