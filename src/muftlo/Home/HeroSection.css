@@ -1,0 +1,67 @@
+.typing {
+  display: inline-block;
+  animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 70%;
+  }
+}
+
+@keyframes blink {
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: #ccc;
+  }
+}
+
+/* HeroSection.css */
+@media (max-width: 400px) {
+  section {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    overflow-x: hidden !important;
+  }
+
+  .typing {
+    font-size: 0.9rem !important;
+  }
+
+  .text-5xl {
+    font-size: 2rem !important;
+  }
+
+  .text-xl,
+  .text-2xl {
+    font-size: 1rem !important;
+  }
+
+  video {
+    border-radius: 10px !important;
+  }
+}
+
+@keyframes bounce-smooth {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.bounce-animation {
+  animation: bounce-smooth 2s infinite ease-in-out;
+}
