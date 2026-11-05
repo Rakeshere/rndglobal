@@ -102,7 +102,7 @@ const MuftloGrid = () => {
               "
             >
               <img
-                src={partner.src}
+                src={partner.src ?? partner}
                 alt={`Partner ${index + 1}`}
                 className="
                   h-16 sm:h-20 md:h-24 
