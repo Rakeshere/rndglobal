@@ -7,8 +7,8 @@ import { BlogHero } from "@/muftlo/Blog/BlogSection";
 export default function BlogsPage() {
   const blogs = [
     {
-      title: "Muftlo: Your Creative Digital Growth Partner",
-      desc: "Muftlo blends creativity with smart digital strategies to boost your brand online. Reach the right audience, grow faster, and turn ideas into measurable success.",
+      title: "R&D Software Solutions: Your Creative Digital Growth Partner",
+      desc: "R&D Software Solutions blends creativity with smart digital strategies to boost your brand online. Reach the right audience, grow faster, and turn ideas into measurable success.",
       img: "/muftloBlog.jpg",
       slug: "muftlo-digital-growth",
     },

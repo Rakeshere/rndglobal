@@ -1,3 +1,4 @@
+import rdLogo from "@/assets/rd-logo.png.asset.json";
 
 import { cn } from "@/lib/utils";
 import { IconMenu2, IconX } from "@tabler/icons-react";
@@ -208,9 +209,7 @@ export const NavbarLogo = () => {
       href="/"
       className="flex cursor-pointer z-10 items-center gap-2 px-2 text-2xl font-extrabold tracking-tight"
     >
-      <span className="bg-gradient-to-r cursor-pointer from-blue-600 via-blue-600 to-blue-600 bg-clip-text text-transparent">
-        muftlo
-      </span>
+      <img src={rdLogo.url} alt="R&D Software Solutions" className="h-10 w-auto rounded-lg bg-white px-2 py-1" />
     </Link>
   );
 };

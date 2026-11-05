@@ -12,27 +12,27 @@ export default function BlogDetailPage() {
 
   const blogs = [
     /* -----------------------------------------------------------
-       1️⃣  MUFTLO BLOG
+       1️⃣  R&D SOFTWARE SOLUTIONS BLOG
     ------------------------------------------------------------ */
     {
       slug: "muftlo-digital-growth",
-      title: "Muftlo: Redefining Digital Marketing in India",
+      title: "R&D Software Solutions: Redefining Digital Marketing in India",
       date: "01/12/2025",
-      author: "Muftlo Agency",
+      author: "R&D Software Solutions Agency",
       cover:
         "/muftloBlog.jpg",
       intro:
-        "What if your marketing agency didn’t just run ads, but understood your business like a partner? Muftlo was born from these questions — and today it's a revolution.",
+        "What if your marketing agency didn’t just run ads, but understood your business like a partner? R&D Software Solutions was born from these questions — and today it's a revolution.",
       sections: [
         {
-          title: "How Muftlo Started: Built from the Inside Out",
-          text: "Muftlo was founded by creator Dhanraj Chauhan, who spent years inside the industry understanding gaps, failures, and the lack of creativity in Indian agencies.",
+          title: "How R&D Software Solutions Started: Built from the Inside Out",
+          text: "R&D Software Solutions was founded by creator Dhanraj Chauhan, who spent years inside the industry understanding gaps, failures, and the lack of creativity in Indian agencies.",
         },
         {
-          title: "The Problem Muftlo Solved",
+          title: "The Problem R&D Software Solutions Solved",
           text: (
             <p>
-              Brands were getting templated and repetitive strategies. Muftlo —
+              Brands were getting templated and repetitive strategies. R&D Software Solutions —
               Marketing Universe For The Lead Outcomes — was launched to bring
               creativity, outcome-driven marketing, and modern execution.
             </p>
@@ -52,26 +52,26 @@ export default function BlogDetailPage() {
       ],
       faq: [
         {
-          question: "What services does Muftlo offer?",
+          question: "What services does R&D Software Solutions offer?",
           answer:
-            "Muftlo offers digital marketing, performance ads, websites, UI/UX, influencer marketing, and content production.",
+            "R&D Software Solutions offers digital marketing, performance ads, websites, UI/UX, influencer marketing, and content production.",
         },
         {
-          question: "Who founded Muftlo?",
-          answer: "Muftlo was founded by Dhanraj Chauhan.",
+          question: "Who founded R&D Software Solutions?",
+          answer: "R&D Software Solutions was founded by Dhanraj Chauhan.",
         },
         {
-          question: "What makes Muftlo different?",
+          question: "What makes R&D Software Solutions different?",
           answer:
-            "Muftlo is strategy-focused, creative, fast, and delivers measurable results.",
+            "R&D Software Solutions is strategy-focused, creative, fast, and delivers measurable results.",
         },
         {
-          question: "Which industries does Muftlo serve?",
+          question: "Which industries does R&D Software Solutions serve?",
           answer:
             "Real estate, education, hospitality, lifestyle, beauty, healthcare, and more.",
         },
         {
-          question: "How can I collaborate with Muftlo?",
+          question: "How can I collaborate with R&D Software Solutions?",
           answer: "You can reach out via website, email, or social media.",
         },
       ],
@@ -85,7 +85,7 @@ export default function BlogDetailPage() {
       title:
         "Top Digital Marketing Services That Bring the Fastest Growth in 2025",
       date: "05/12/2025",
-      author: "Muftlo Agency",
+      author: "R&D Software Solutions Agency",
       cover:
         "/Anton Tkachev.jpg",
       intro:
@@ -138,7 +138,7 @@ export default function BlogDetailPage() {
       slug: "importance-of-digital-marketing",
       title: "Why Digital Marketing Is Important for Every Business in 2025",
       date: "06/12/2025",
-      author: "Muftlo Agency",
+      author: "R&D Software Solutions Agency",
       cover:
         "/Best Digital Marketing.jpg",
       intro:
