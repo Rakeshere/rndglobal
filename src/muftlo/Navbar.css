@@ -1,0 +1,10 @@
+
+.navbar-links a {
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar-links a div {
+  z-index: -1;
+}
