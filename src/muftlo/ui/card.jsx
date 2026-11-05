@@ -94,7 +94,7 @@ function CardFooter({ className, ...props }) {
   );
 }
 
-export function BlueCard({ className, ...props }) {
+function BlueCard({ className, ...props }) {
   return (
     <div
       data-slot="card"
@@ -107,7 +107,7 @@ export function BlueCard({ className, ...props }) {
   );
 }
 
-export function BlueCardHeader({ className, ...props }) {
+function BlueCardHeader({ className, ...props }) {
   return (
     <div
       data-slot="card-header"
@@ -120,7 +120,7 @@ export function BlueCardHeader({ className, ...props }) {
   );
 }
 
-export function BlueCardTitle({ className, ...props }) {
+function BlueCardTitle({ className, ...props }) {
   return (
     <div
       data-slot="card-title"
@@ -133,7 +133,7 @@ export function BlueCardTitle({ className, ...props }) {
   );
 }
 
-export function BlueCardDescription({ className, ...props }) {
+function BlueCardDescription({ className, ...props }) {
   return (
     <div
       data-slot="card-description"
@@ -143,7 +143,7 @@ export function BlueCardDescription({ className, ...props }) {
   );
 }
 
-export function BlueCardContent({ className, ...props }) {
+function BlueCardContent({ className, ...props }) {
   return (
     <div
       data-slot="card-content"
@@ -153,7 +153,7 @@ export function BlueCardContent({ className, ...props }) {
   );
 }
 
-export function BlueCardFooter({ className, ...props }) {
+function BlueCardFooter({ className, ...props }) {
   return (
     <div
       data-slot="card-footer"
