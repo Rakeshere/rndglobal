@@ -97,7 +97,7 @@ export default function AboutPage() {
 
             <p className="text-gray-300 leading-relaxed mb-6">
               <span className="font-extrabold text-blue-600 text-xl">
-                muftlo
+                R&D Software Solutions
               </span>{" "}
               started with a passion for creativity and a vision to transform
               digital storytelling. What began as an idea soon turned into a
@@ -106,7 +106,7 @@ export default function AboutPage() {
             </p>
 
             <p className="text-gray-300 leading-relaxed mb-8">
-              At Muftlo, we combine innovation, strategic thinking, and
+              At R&D Software Solutions, we combine innovation, strategic thinking, and
               data-driven insights with bold creativity. We believe marketing
               should be effortless, smart, and genuinely transformative.
             </p>
@@ -148,7 +148,7 @@ export default function AboutPage() {
           >
             <img
               src="/muftloBlog.jpg"
-              alt="About Muftlo"
+              alt="About R&D Software Solutions"
               className="rounded-xl w-full object-cover"
             />
           </div>
@@ -169,11 +169,11 @@ export default function AboutPage() {
             }`}
           >
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-2 md:mb-1">
-              Why choose <span className="relative text-blue-700">muftlo?</span>
+              Why choose <span className="relative text-blue-700">R&D Software Solutions?</span>
             </h2>
             <p className="text-lg text-gray-200 max-w-3xl mx-auto">
               Experience innovative, excellent results-driven marketing with
-              muftlo.
+              R&D Software Solutions.
             </p>
           </div>
         </div>
@@ -197,7 +197,7 @@ export default function AboutPage() {
               Our <span className="text-blue-500">Strengths</span>
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-snug">
-              At <span className="text-blue-400 font-semibold">muftlo</span>, we
+              At <span className="text-blue-400 font-semibold">R&D Software Solutions</span>, we
               stand out with a proactive approach and results-driven digital
               marketing.
             </p>

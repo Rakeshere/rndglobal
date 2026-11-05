@@ -281,7 +281,7 @@ export default function ServicesPage() {
               Photo and Video Production
             </h2>
             <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-              Muftlo's media production team work to create
+              R&D Software Solutions's media production team work to create
               captivating visuals that resonate with audiences and bring brands
               to life.
             </p>

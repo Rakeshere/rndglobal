@@ -215,7 +215,7 @@ export default function ProjectsShowcase() {
           Our Projects
         </h2>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-          Explore how Muftlo helped businesses grow through creative marketing,
+          Explore how R&D Software Solutions helped businesses grow through creative marketing,
           production, and digital excellence.
         </p>
       </div>

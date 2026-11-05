@@ -11,7 +11,7 @@ export default function MarketingSection() {
           <div className="space-y-4">
             <div>
               <p className="text-5xl sm:text-7xl md:text-9xl font-extrabold text-blue-600 tracking-tight leading-[1.05]">
-                muftlo
+                R&D Software Solutions
               </p>
 
               <p className="ml-1 -mt-2 text-lg sm:text-xl md:text-2xl text-gray-300 mb-6 font-light tracking-wide overflow-hidden whitespace-nowrap border-r-2 border-blue-500 typing">

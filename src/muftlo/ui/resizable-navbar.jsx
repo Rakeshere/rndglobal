@@ -209,7 +209,7 @@ export const NavbarLogo = () => {
       className="flex cursor-pointer z-10 items-center gap-2 px-2 text-2xl font-extrabold tracking-tight"
     >
       <span className="bg-gradient-to-r cursor-pointer from-blue-600 via-blue-600 to-blue-600 bg-clip-text text-transparent">
-        muftlo
+        R&D Software Solutions
       </span>
     </Link>
   );

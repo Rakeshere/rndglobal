@@ -40,7 +40,7 @@ export default function Navbar() {
               href="/"
               className="inline-flex cursor-pointer -mt-1 items-baseline gap-1 text-2xl md:text-3xl font-extrabold text-blue-700"
             >
-              muftlo
+              R&D Software Solutions
             </Link>
           </NavbarLogo>
 
@@ -75,7 +75,7 @@ export default function Navbar() {
                 href="/"
                 className="inline-flex items-baseline gap-1 text-2xl font-extrabold text-blue-800"
               >
-                muftlo
+                R&D Software Solutions
               </Link>
             </NavbarLogo>
             <MobileNavToggle

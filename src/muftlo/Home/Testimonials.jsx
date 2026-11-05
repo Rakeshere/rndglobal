@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 const testimonials = [
   {
     quote:
-      "We partnered with Muftlo for a complete 360° marketing solution, and they delivered exactly what we needed. Their dedication and results-driven work have been outstanding.",
+      "We partnered with R&D Software Solutions for a complete 360° marketing solution, and they delivered exactly what we needed. Their dedication and results-driven work have been outstanding.",
     name: "Arun Sharma",
     title: "CEO & Founder",
     company: "SEARCH ABODE",
@@ -17,7 +17,7 @@ const testimonials = [
   },
   {
     quote:
-      "Muftlo truly elevated our brand presence. Their video production team delivered high-quality and creative marketing content that perfectly showcased our luxury properties. A reliable and professional partner we highly recommend.",
+      "R&D Software Solutions truly elevated our brand presence. Their video production team delivered high-quality and creative marketing content that perfectly showcased our luxury properties. A reliable and professional partner we highly recommend.",
     name: "Sushil Soni",
     title: "CEO & Founder",
     company: "KEYS90",
@@ -26,7 +26,7 @@ const testimonials = [
   },
   {
     quote:
-      "Working with Muftlo has transformed our marketing efforts. Their all-in-one solutions and innovative approach in real estate promotions have delivered excellent results for Reliant Housing.",
+      "Working with R&D Software Solutions has transformed our marketing efforts. Their all-in-one solutions and innovative approach in real estate promotions have delivered excellent results for Reliant Housing.",
     name: "Rakesh Mahal",
     title: "Director",
     company: "RELIANT HOUSING",
@@ -35,7 +35,7 @@ const testimonials = [
   },
   {
     quote:
-      "We are impressed with Muftlo’s innovation and dedication. From complete 360 product visuals to engaging marketing podcasts, they handled everything flawlessly. Great team to work with!",
+      "We are impressed with R&D Software Solutions’s innovation and dedication. From complete 360 product visuals to engaging marketing podcasts, they handled everything flawlessly. Great team to work with!",
     name: "Satyendra Parnami",
     title: "Director",
     company: "SONDARYAM",
@@ -44,7 +44,7 @@ const testimonials = [
   },
   {
     quote:
-      "Working with Muftlo boosted our digital presence and lead quality. Their all-round marketing support helped us achieve outstanding results. Highly recommended!",
+      "Working with R&D Software Solutions boosted our digital presence and lead quality. Their all-round marketing support helped us achieve outstanding results. Highly recommended!",
     name: "Vikram Choudhary",
     title: "Owner",
     company: "PARTH SARTHI",
@@ -53,7 +53,7 @@ const testimonials = [
   },
   {
     quote:
-      "Outstanding service by Muftlo! They handled everything from elevations to full marketing strategy, helping Force Lifts stand out in the market. Highly recommended!",
+      "Outstanding service by R&D Software Solutions! They handled everything from elevations to full marketing strategy, helping Force Lifts stand out in the market. Highly recommended!",
     name: "Neeraj Sharma",
     title: "Director",
     company: "FORCE LIFTS",
@@ -62,7 +62,7 @@ const testimonials = [
   },
   {
     quote:
-      "Thanks to Muftlo, Pastelli’s online presence and sales have grown tremendously. Their end-to-end support in marketing and web management is truly exceptional.",
+      "Thanks to R&D Software Solutions, Pastelli’s online presence and sales have grown tremendously. Their end-to-end support in marketing and web management is truly exceptional.",
     name: "Arohi Mehta",
     title: "Owner",
     company: "PASTELLI",
@@ -71,7 +71,7 @@ const testimonials = [
   },
   {
     quote:
-      "We trust Muftlo for complete marketing support. Their 360° approach helped Miracle Enclave connect with more buyers and grow faster.",
+      "We trust R&D Software Solutions for complete marketing support. Their 360° approach helped Miracle Enclave connect with more buyers and grow faster.",
     name: "Vikram Mitruka",
     title: "Owner",
     company: "MIRACLE ENCLAVE",
@@ -80,7 +80,7 @@ const testimonials = [
   },
   {
     quote:
-      "We are extremely happy with Muftlo’s complete branding and marketing support. They built Swargun ENT Clinic’s presence from zero and delivered outstanding results!",
+      "We are extremely happy with R&D Software Solutions’s complete branding and marketing support. They built Swargun ENT Clinic’s presence from zero and delivered outstanding results!",
     name: "Palak Dewan",
     title: "Owner",
     company: "SWARGUN ENT CLINIC",
@@ -89,7 +89,7 @@ const testimonials = [
   },
   {
     quote:
-      "Working with Muftlo transformed Crude Fit’s brand presence. Their marketing strategies and execution across all platforms were top-notch. Truly a one-stop solution!",
+      "Working with R&D Software Solutions transformed Crude Fit’s brand presence. Their marketing strategies and execution across all platforms were top-notch. Truly a one-stop solution!",
     name: "Rahul Maghrani",
     title: "Co-Founder",
     company: "CRUDE FIT",
@@ -98,7 +98,7 @@ const testimonials = [
   },
   {
     quote:
-      "We are extremely satisfied with Muftlo’s marketing expertise. From branding to digital execution, they handled everything professionally and delivered exceptional outcomes.",
+      "We are extremely satisfied with R&D Software Solutions’s marketing expertise. From branding to digital execution, they handled everything professionally and delivered exceptional outcomes.",
     name: "Prem Kumar Mitra",
     title: "Director",
     company: "TRIMAX",
@@ -107,7 +107,7 @@ const testimonials = [
   },
   {
     quote:
-      "Working with Muftlo has been a fantastic experience. They handled our branding, promotions, and complete marketing with full dedication and creativity. Their contribution truly helped Dot Square reach the right audience.",
+      "Working with R&D Software Solutions has been a fantastic experience. They handled our branding, promotions, and complete marketing with full dedication and creativity. Their contribution truly helped Dot Square reach the right audience.",
     name: "Ashish Mantri",
     title: "Vice President",
     company: "DOT SQUARE",

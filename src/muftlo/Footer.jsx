@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="-mt-3">
           <div className="flex items-center gap-2 mb-2">
             <h1 className="text-6xl font-extrabold tracking-wide text-blue-700">
-              muftlo
+              R&D Software Solutions
             </h1>
           </div>
 
@@ -175,7 +175,7 @@ export default function Footer() {
         </div>
 
         <p className="text-gray-500">
-          © {new Date().getFullYear()} Muftlo Digital Marketing Agency. All Rights
+          © {new Date().getFullYear()} R&D Software Solutions Digital Marketing Agency. All Rights
           Reserved.
         </p>
       </div>
