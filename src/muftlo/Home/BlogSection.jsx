@@ -1,6 +1,6 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
+
+import Image from "@/muftlo/next/image";
+import Link from "@/muftlo/next/link";
 import { motion } from "framer-motion";
 
 const blogs = [

@@ -1,4 +1,4 @@
-"use client";
+
 
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -12,8 +12,8 @@ import {
   CheckCircle,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card } from "@/muftlo/ui/card";
+import { Badge } from "@/muftlo/ui/badge";
 
 const workflowSteps = [
   {

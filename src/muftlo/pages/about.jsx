@@ -1,6 +1,6 @@
-"use client";
+
 import { useEffect, useRef, useState } from "react";
-import "@/components/Home/HeroSection.css";
+import "@/muftlo/Home/HeroSection.css";
 import {
   Lightbulb,
   Users,
@@ -9,9 +9,9 @@ import {
   DollarSign,
   Award,
 } from "lucide-react";
-import "@/components/About/about.css";
-import WorkflowSection from "@/components/About/aboutPipeline";
-import LampDemo from "@/components/ui/lamp";
+import "@/muftlo/About/about.css";
+import WorkflowSection from "@/muftlo/About/aboutPipeline";
+import LampDemo from "@/muftlo/ui/lamp";
 
 export default function AboutPage() {
   const [visibleSections, setVisibleSections] = useState(new Set());

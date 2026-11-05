@@ -1,8 +1,8 @@
-"use client";
+
 import React from "react";
-import Link from "next/link";
+import Link from "@/muftlo/next/link";
 import { motion } from "framer-motion";
-import { BlogHero } from "@/components/Blog/BlogSection";
+import { BlogHero } from "@/muftlo/Blog/BlogSection";
 
 export default function BlogsPage() {
   const blogs = [

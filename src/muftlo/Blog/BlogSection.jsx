@@ -1,6 +1,6 @@
-import Link from "next/link";
+import Link from "@/muftlo/next/link";
 import { cn } from "@/lib/utils";
-import { CardBlog, CardContent, CardFooter } from "@/components/ui/card";
+import { CardBlog, CardContent, CardFooter } from "@/muftlo/ui/card";
 
 export function BlogCard({ title, imageSrc, imageAlt, href, className }) {
   return (

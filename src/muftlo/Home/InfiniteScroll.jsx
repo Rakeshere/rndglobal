@@ -1,5 +1,5 @@
-"use client";
-import Link from "next/link";
+
+import Link from "@/muftlo/next/link";
 import { useEffect, useState, useRef } from "react";
 import { Search, Lightbulb, Megaphone, TrendingUp } from "lucide-react";
 import "./HeroSection.css";

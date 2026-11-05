@@ -1,4 +1,4 @@
-"use client";
+
 
 import {
   Navbar as BaseNavbar,
@@ -10,12 +10,12 @@ import {
   MobileNavHeader,
   MobileNavToggle,
   MobileNavMenu,
-} from "@/components/ui/resizable-navbar";
+} from "@/muftlo/ui/resizable-navbar";
 
 import { useState } from "react";
-import Link from "next/link";
+import Link from "@/muftlo/next/link";
 import { ArrowRight } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/muftlo/next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Navbar.css";
 

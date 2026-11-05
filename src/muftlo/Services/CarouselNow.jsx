@@ -1,6 +1,6 @@
-"use client";
 
-import Link from "next/link";
+
+import Link from "@/muftlo/next/link";
 import { useState, useEffect } from "react";
 
 const ChooseUs = () => {

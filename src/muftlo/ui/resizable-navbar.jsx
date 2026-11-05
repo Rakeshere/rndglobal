@@ -1,4 +1,4 @@
-"use client";
+
 import { cn } from "@/lib/utils";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import {
@@ -7,9 +7,9 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "motion/react";
-import Link from "next/link";
+import Link from "@/muftlo/next/link";
 import React, { useRef, useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/muftlo/next/navigation";
 
 export const Navbar = ({ children, className }) => {
   const ref = useRef(null);

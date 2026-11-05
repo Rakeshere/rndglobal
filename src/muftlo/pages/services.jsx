@@ -1,4 +1,4 @@
-"use client";
+
 
 import React from "react";
 import { useState, useEffect, useRef } from "react";
@@ -9,11 +9,11 @@ import {
   BlueCardFooter,
   BlueCardHeader,
   BlueCardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+} from "@/muftlo/ui/card";
+import { Button } from "@/muftlo/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
-import { ThreeDMarqueeDemoSecond } from "@/components/Services/ThreeDMarquee";
-import ChooseUs from "@/components/Services/CarouselNow";
+import { ThreeDMarqueeDemoSecond } from "@/muftlo/Services/ThreeDMarquee";
+import ChooseUs from "@/muftlo/Services/CarouselNow";
 
 export default function ServicesPage() {
   const [isVisible, setIsVisible] = useState(false);

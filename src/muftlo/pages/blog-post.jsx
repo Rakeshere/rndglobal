@@ -1,7 +1,7 @@
-"use client";
+
 
 import { motion } from "framer-motion";
-import { useParams } from "next/navigation";
+import { useParams } from "@/muftlo/next/navigation";
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 

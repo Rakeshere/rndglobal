@@ -1,6 +1,6 @@
-"use client";
+
 import "./HeroSection.css";
-import Link from "next/link";
+import Link from "@/muftlo/next/link";
 import { Star, StarHalf } from "lucide-react";
 
 export default function MarketingSection() {
