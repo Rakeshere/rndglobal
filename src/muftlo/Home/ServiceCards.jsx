@@ -1,194 +1,81 @@
-
 import React from "react";
-import { WobbleCard } from "../ui/wobble-card";
-import { Code } from "lucide-react";
+import Link from "@/muftlo/next/link";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const services = [
+  {
+    title: "Web Development",
+    category: "DIGITAL EXPERIENCES",
+    description: "Fast, thoughtful websites and software built around the way your business works.",
+    image: "/image.png",
+    featured: true,
+  },
+  {
+    title: "Digital Marketing",
+    category: "GROWTH & VISIBILITY",
+    description: "",
+    image: "/Best Digital Marketing.jpg",
+  },
+  {
+    title: "Photo & Video",
+    category: "CONTENT & CREATIVE",
+    description: "",
+    image: "/The Wood A.jpg",
+  },
+];
 
 export function WobbleCardDemo() {
   return (
-    <section className="py-16">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-5">
-          <h2 className="text-center text-4xl md:text-5xl font-extrabold text-white">
-            Our Services
-          </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto mt-1">
-            We are here to help you achieve your goals
-          </p>
+    <section className="py-12 md:py-16" aria-labelledby="home-services-title">
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
+        <div className="mb-7 flex items-end justify-between gap-4 md:mb-9">
+          <div>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-brand-orange">What we do</p>
+            <h2 id="home-services-title" className="max-w-2xl text-3xl font-semibold leading-tight text-brand-cream md:text-4xl">
+              Our Services
+            </h2>
+          </div>
+          <Button asChild variant="outline" className="hidden shrink-0 gap-2 border-brand-cream/20 bg-brand-cream/5 text-brand-cream hover:bg-brand-cream/10 hover:text-brand-cream sm:inline-flex">
+            <Link href="/services">View all services <ArrowUpRight aria-hidden="true" /></Link>
+          </Button>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 w-full">
-          <WobbleCard containerClassName="relative overflow-hidden col-span-1 lg:col-span-2 bg-[#0F172A] min-h-[400px] lg:min-h-[300px]">
-            {/* <img
-              src="/Best Digital Marketing.jpg"
-              alt="Digital Marketing Visual"
-              className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none"
-            /> */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/40 to-black/40 pointer-events-none" />
-
-            <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="max-w-sm">
-                <div className="flex items-center gap-3 mb-3 text-[#00a8ff]">
-                  <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-tight text-white">
-                    Digital Marketing
-                  </h2>
-                </div>
-
-                <p className="mt-4 text-left text-base/6 text-neutral-200">
-                  Digital Marketing isn’t just about being online. It makes your
-                  brand visible, trusted, and preferred by the right audience.
-                  With engaging content and targeted campaigns, it turns
-                  attention into real customers.
-                </p>
-              </div>
-
-              <div className="grid gap-4">
-                {[
-                  "Brand Visibility & Awareness",
-                  "Audience Engagement",
-                  "Lead Generation & Sales Growth",
-                  "Analytics & Optimization",
-                ].map((item, i) => (
-                  <div
-                    key={i}
-                    className="bg-white/10 border border-white/20 backdrop-blur-md 
-                     px-4 py-2 rounded-xl text-white font-medium 
-                      transition duration-300"
-                  >
-                    {item}
+        <div className="-mx-5 grid grid-flow-col auto-cols-[84%] gap-3 overflow-x-auto px-5 pb-2 snap-x snap-mandatory md:mx-0 md:grid-flow-row md:auto-cols-auto md:grid-cols-[1.18fr_0.91fr_0.91fr] md:overflow-visible md:px-0 md:pb-0">
+          {services.map((service) => (
+            <Link
+              href="/services"
+              key={service.title}
+              className={`group relative flex min-h-[245px] snap-start items-stretch overflow-hidden rounded-lg border border-brand-cream/15 p-5 text-brand-navy transition-transform duration-300 hover:-translate-y-1 md:min-h-[280px] md:p-6 ${service.featured ? "bg-brand-cream" : service.title === "Digital Marketing" ? "bg-brand-orange" : "bg-brand-cream"}`}
+            >
+              {service.featured ? (
+                <div className="grid w-full grid-cols-[1.1fr_0.8fr] items-center gap-3 md:grid-cols-[1fr_0.85fr] md:gap-4">
+                  <div className="flex min-w-0 flex-col items-start">
+                    <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-brand-orange">{service.category}</p>
+                    <h3 className="text-xl font-semibold leading-tight md:text-2xl">{service.title}</h3>
+                    <p className="mt-2 max-w-xs text-xs leading-relaxed text-brand-navy/75 md:text-sm">{service.description}</p>
+                    <span className="mt-3 inline-flex items-center gap-2 text-sm font-semibold">Read more <span className="grid size-7 place-items-center rounded-full bg-brand-orange text-brand-navy transition-transform group-hover:translate-x-1"><ArrowRight aria-hidden="true" size={15} /></span></span>
                   </div>
-                ))}
-              </div>
-            </div>
-          </WobbleCard>
-
-          <WobbleCard
-            containerClassName="
-    col-span-1 
-    min-h-[300px] 
-    relative 
-    overflow-hidden 
-    rounded-2xl 
-    bg-[#111827]
-  "
-          >
-            <div
-              className="
-      absolute inset-0 
-      bg-cover bg-center 
-      opacity-40 
-      group-hover:opacity-50 
-      transition-all duration-700
-    "
-              // style={{
-              //   backgroundImage:
-              //     "url('https://images.unsplash.com/photo-1497015289639-54688650d173?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dmlkZW8lMjBwcm9kdWN0aW9ufGVufDB8fDB8fHww&fm=jpg&q=60&w=3000')",
-              // }}
-            ></div>
-
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/40 to-black/40"></div>
-
-            <div className="relative z-10 max-w-sm">
-              <div className="flex items-center gap-3 mb-3 text-[#ff4f81]">
-                <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-tight text-white">
-                  Photo & Video Production
-                </h2>
-              </div>
-
-              <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
-                We create polished and professional photo-video content that
-                elevates your brand presence. With expert direction, cinematic
-                shooting, and next level editing, every frame is crafted to
-                attract, engage, and convert.
-              </p>
-            </div>
-          </WobbleCard>
-
-          <WobbleCard
-            containerClassName="
-    col-span-1 
-    min-h-[300px] 
-    relative 
-    overflow-hidden 
-    rounded-2xl 
-    bg-[#111827]
-  "
-          >
-            <div
-              className="
-      absolute inset-0 
-      bg-cover bg-center 
-      opacity-40 
-      group-hover:opacity-50 
-      transition-all duration-700
-    "
-              // style={{
-              //   backgroundImage:
-              //     "url('https://img.freepik.com/free-photo/corporate-management-strategy-solution-branding-concept_53876-167088.jpg?semt=ais_hybrid&w=740&q=80')",
-              // }}
-            ></div>
-
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/40 to-black/40"></div>
-
-            <div className="relative z-10 max-w-sm">
-              <div className="flex items-center gap-3 mb-3 text-[#ff4f81]">
-                <h2 className="text-left text-base md:text-xl lg:text-3xl font-semibold tracking-tight text-white">
-                  Performance Marketing
-                </h2>
-              </div>
-
-              <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
-                Performance marketing focuses on measurable results every
-                penny spent drives real actions like clicks, leads or sales.
-                With data-backed strategies and continuous optimization, it
-                ensures maximum ROI and faster business growth.
-              </p>
-            </div>
-          </WobbleCard>
-
-          <WobbleCard containerClassName="relative overflow-hidden col-span-1 lg:col-span-2 bg-[#0F172A] min-h-[500px] lg:min-h-[300px]">
-            {/* <img
-              src="https://webliquids.com/wp-content/uploads/2025/03/360_F_871603234_fTMmjlUOpt4F9mDudj8wjyzkt0khEtSZ-1.jpg"
-              alt="Web Development Visual"
-              className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none"
-            /> */}
-
-            <div className="absolute inset-0 bg-black/40 pointer-events-none" />
-            <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="max-w-sm">
-                <div className="flex items-center gap-3 mb-3 text-[#00a8ff]">
-                  <h2 className="text-left text-base md:text-xl lg:text-3xl font-semibold tracking-tight text-white">
-                    Web Development
-                  </h2>
+                  <img src={service.image} alt="Website design and development" className="h-36 w-full rounded-md object-cover md:h-40" />
                 </div>
-
-                <p className="mt-4 text-left text-base/6 text-neutral-200">
-                  Web development ensures your website is responsive,
-                  user-friendly, fast and secure. With smart design and SEO
-                  optimization, it helps your business stand out online, attract
-                  more visitors, and turn them into customers. 
-                </p>
-              </div>
-
-              <div className="grid gap-4">
-                {[
-                  "Responsive Design",
-                  "User-Friendly Experience (UI/UX)",
-                  "High Performance & Security",
-                  "SEO-Optimized Structure",
-                ].map((item, i) => (
-                  <div
-                    key={i}
-                    className="bg-white/10 border border-white/20 backdrop-blur-md 
-                     px-4 py-2 rounded-xl text-white font-medium
-                     transition duration-300"
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </WobbleCard>
+              ) : (
+                <div className="flex w-full flex-col items-start">
+                  <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-brand-navy/65">{service.category}</p>
+                  <h3 className="max-w-[12ch] text-xl font-semibold leading-tight md:text-2xl">{service.title}</h3>
+                  <span className="mt-auto inline-flex w-full items-center justify-between pt-7 text-sm font-semibold">
+                    Read more
+                    <span className="grid size-8 place-items-center rounded-full bg-brand-cream/80 text-brand-navy transition-transform group-hover:translate-x-1"><ArrowUpRight aria-hidden="true" size={17} /></span>
+                  </span>
+                </div>
+              )}
+              <span className="sr-only">Explore {service.title} services</span>
+            </Link>
+          ))}
         </div>
+
+        <Button asChild className="mt-4 w-full gap-2 bg-brand-orange text-brand-navy hover:bg-brand-orange/90 sm:hidden">
+          <Link href="/services">View all services <ArrowUpRight aria-hidden="true" /></Link>
+        </Button>
       </div>
     </section>
   );
