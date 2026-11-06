@@ -4,6 +4,8 @@ import Page from "@/muftlo/pages/blog";
 export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "R&D Software Solutions Blog — Digital Marketing Insights" },
       { name: "description", content: "Ideas and guides on digital marketing, branding and growth from R&D Software Solutions." },
       { property: "og:title", content: "R&D Software Solutions Blog — Digital Marketing Insights" },
