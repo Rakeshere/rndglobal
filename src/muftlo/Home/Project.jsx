@@ -1,6 +1,9 @@
 
 
 import { motion } from "framer-motion";
+import { ArrowRight, Sparkles } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { Button } from "@/muftlo/ui/button";
 
 const projects = [
   {
@@ -208,74 +211,81 @@ const projects = [
 ];
 
 export default function ProjectsShowcase() {
+  const stickyPositions = [
+    "top-24",
+    "top-[6.5rem]",
+    "top-28",
+    "top-[7.5rem]",
+    "top-32",
+    "top-[8.5rem]",
+    "top-36",
+    "top-[9.5rem]",
+    "top-40",
+    "top-[10.5rem]",
+    "top-44",
+    "top-[11.5rem]",
+  ];
+
   return (
-    <section className="py-16 px-4 max-w-7xl mx-auto">
-      <div className="text-center mb-10">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-2">
+    <section aria-labelledby="projects-heading" className="bg-brand-cream px-4 py-16 text-brand-navy md:px-8 md:py-20">
+      <div className="mx-auto max-w-6xl">
+        <h2 id="projects-heading" className="mb-8 text-4xl font-extrabold md:mb-10 md:text-5xl">
           Our Projects
         </h2>
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-          Explore how R&D Software Solutions helped businesses grow through creative marketing,
-          production, and digital excellence.
-        </p>
-      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, i) => (
-          <motion.div
-            key={project.id}
-            className="group relative rounded-2xl overflow-hidden border border-[#2c2c2c] 
-              bg-gray-900 text-white 
-              hover:shadow-[0_0_25px_rgba(255,255,255,0.05)] 
-              transition-all duration-500 ease-out"
-            initial={{ opacity: 1, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-          >
-            {/* Image */}
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className=""
-            ></a>
+        <div className="space-y-5 pb-12">
+          {projects.map((project, i) => {
+            const details = project.metrics
+              .map((metric) => metric.label)
+              .filter(Boolean)
+              .join(" ");
 
-            <div className="block relative h-56 overflow-hidden">
-              <motion.img
-                src={project.image}
-                alt={project.title}
-                className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
-              />
-              {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500"></div>
-            </div>
+            return (
+              <motion.article
+                key={project.id}
+                className={`sticky ${stickyPositions[i] ?? "top-24"} flex min-h-[25rem] flex-col justify-between rounded-[1.25rem] border border-brand-cream/10 bg-brand-navy p-6 text-brand-cream shadow-xl sm:p-9 md:min-h-[27rem] md:p-12`}
+                initial={{ opacity: 1, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.45, delay: 0.05 }}
+              >
+                <div>
+                  <h3 className="max-w-4xl text-4xl font-medium leading-[1.05] sm:text-5xl md:text-6xl">
+                    {project.title}
+                  </h3>
+                  <p className="mt-1 max-w-4xl text-3xl leading-tight text-brand-cream/55 sm:text-4xl md:text-5xl">
+                    {project.category}
+                  </p>
+                </div>
 
-            {/* Content */}
-            <div className="py-5 px-4">
-              <h3 className="text-lg md:text-xl font-semibold text-white mb-1 group-hover:text-gray-100 transition-colors duration-300">
-                {project.title}
-              </h3>
-              <p className="text-sm md:text-base text-gray-400 mb-3">
-                {project.category}
-              </p>
-
-              <ul className="text-sm md:text-base text-gray-300 space-y-1">
-                {project.metrics.map((metric, idx) => (
-                  <li key={idx} className="flex items-start gap-2">
-                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-gray-500 flex-shrink-0"></span>
-                    <span className="">
-                      <span className="font-semibold text-white">
+                <div className="mt-10 max-w-4xl">
+                  <ul className="mb-6 flex flex-wrap gap-x-5 gap-y-2 text-xs text-brand-cream/75 sm:text-sm">
+                    {project.metrics.map((metric) => (
+                      <li key={metric.value} className="whitespace-nowrap">
                         {metric.value}
-                      </span>{" "}
-                      {metric.label}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </motion.div>
-        ))}
+                      </li>
+                    ))}
+                  </ul>
+                  {details && (
+                    <p className="flex items-start gap-3 text-sm leading-relaxed text-brand-cream/85 sm:text-base">
+                      <Sparkles aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-brand-orange" />
+                      <span>{details}</span>
+                    </p>
+                  )}
+                </div>
+              </motion.article>
+            );
+          })}
+        </div>
+
+        <div className="flex justify-center">
+          <Button asChild className="bg-brand-orange px-6 text-brand-navy hover:bg-brand-orange/90">
+            <Link to="/services">
+              Explore Our Services
+              <ArrowRight aria-hidden="true" />
+            </Link>
+          </Button>
+        </div>
       </div>
     </section>
   );
