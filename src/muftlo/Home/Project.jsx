@@ -213,10 +213,10 @@ const projects = [
 export default function ProjectsShowcase() {
   const featuredProjects = [
     projects[0],
-    projects[1],
     projects[2],
     projects[3],
     projects[6],
+    projects[8],
   ].filter((project) => project);
 
   return (
@@ -245,7 +245,7 @@ export default function ProjectsShowcase() {
             return (
               <motion.article
                 key={project.id}
-                className={`group grid min-h-[25rem] items-center py-8 md:min-h-[27rem] md:grid-cols-2 md:py-10 ${reverse ? "md:[&>div:first-child]:order-2" : ""}`}
+                className={`group grid min-h-[25rem] items-center gap-6 py-8 md:min-h-[27rem] md:grid-cols-2 md:gap-0 md:py-10`}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -259,14 +259,14 @@ export default function ProjectsShowcase() {
                   />
                   <div
                     aria-hidden="true"
-                    className={`absolute inset-0 bg-gradient-to-t from-brand-cream/95 via-brand-cream/35 to-transparent md:w-2/3 ${reverse ? "md:ml-auto md:bg-gradient-to-l md:from-brand-cream md:via-brand-cream/50" : "md:bg-gradient-to-r md:from-brand-cream md:via-brand-cream/50"}`}
+                    className={`absolute inset-0 bg-gradient-to-t from-brand-cream/95 via-brand-cream/35 to-transparent md:w-2/3 ${reverse ? "md:ml-auto md:bg-gradient-to-l md:from-transparent md:via-brand-cream/50 md:to-brand-cream" : "md:bg-gradient-to-r md:from-transparent md:via-brand-cream/50 md:to-brand-cream"}`}
                   />
                   <span className="absolute left-4 top-4 font-mono text-sm text-brand-cream drop-shadow sm:left-6 sm:top-6">
                     0{i + 1}
                   </span>
                 </div>
 
-                <div className={`relative z-10 -mt-5 px-2 md:mt-0 md:px-8 ${reverse ? "md:order-1 md:pl-0" : "md:pr-0"}`}>
+                <div className={`relative z-10 px-2 md:px-8 ${reverse ? "md:order-1 md:pl-0" : "md:pr-0"}`}>
                   <p className="mb-3 text-xs font-semibold uppercase text-brand-orange">{project.category}</p>
                   <h3 className="max-w-xl text-3xl font-semibold leading-tight md:text-4xl">
                     {project.title}
