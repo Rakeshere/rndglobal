@@ -1,7 +1,7 @@
 
 
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/muftlo/ui/button";
 
@@ -211,30 +211,32 @@ const projects = [
 ];
 
 export default function ProjectsShowcase() {
-  const stickyPositions = [
-    "top-24",
-    "top-[6.5rem]",
-    "top-28",
-    "top-[7.5rem]",
-    "top-32",
-    "top-[8.5rem]",
-    "top-36",
-    "top-[9.5rem]",
-    "top-40",
-    "top-[10.5rem]",
-    "top-44",
-    "top-[11.5rem]",
-  ];
+  const featuredProjects = [
+    projects[0],
+    projects[2],
+    projects[3],
+    projects[6],
+    projects[8],
+  ].filter((project) => project);
 
   return (
-    <section aria-labelledby="projects-heading" className="bg-brand-cream px-4 py-16 text-brand-navy md:px-8 md:py-20">
-      <div className="mx-auto max-w-6xl">
-        <h2 id="projects-heading" className="mb-8 text-4xl font-extrabold md:mb-10 md:text-5xl">
-          Our Projects
-        </h2>
+    <section aria-labelledby="projects-heading" className="bg-brand-cream px-4 py-16 text-brand-navy md:px-8 md:py-24">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-4 border-b border-brand-navy/15 pb-6 md:mb-10">
+          <div>
+            <p className="mb-2 text-xs font-semibold uppercase text-brand-orange">Selected work · 01—05</p>
+            <h2 id="projects-heading" className="text-4xl font-extrabold md:text-5xl">
+              Our Projects
+            </h2>
+          </div>
+          <p className="max-w-sm text-sm leading-relaxed text-brand-navy/65 md:text-base">
+            A few partnerships, shaped into work that moves brands forward.
+          </p>
+        </div>
 
-        <div className="space-y-5 pb-12">
-          {projects.map((project, i) => {
+        <div className="divide-y divide-brand-navy/15">
+          {featuredProjects.map((project, i) => {
+            const reverse = i % 2 === 1;
             const details = project.metrics
               .map((metric) => metric.label)
               .filter(Boolean)
@@ -243,45 +245,59 @@ export default function ProjectsShowcase() {
             return (
               <motion.article
                 key={project.id}
-                className={`sticky ${stickyPositions[i] ?? "top-24"} flex min-h-[25rem] flex-col justify-between rounded-[1.25rem] border border-brand-cream/10 bg-brand-navy p-6 text-brand-cream shadow-xl sm:p-9 md:min-h-[27rem] md:p-12`}
-                initial={{ opacity: 1, y: 28 }}
+                className={`group grid min-h-[25rem] items-center gap-6 py-8 md:min-h-[27rem] md:grid-cols-2 md:gap-0 md:py-10`}
+                initial={{ opacity: 1, y: 0 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.45, delay: 0.05 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: 0.04 }}
               >
-                <div>
-                  <h3 className="max-w-4xl text-4xl font-medium leading-[1.05] sm:text-5xl md:text-6xl">
-                    {project.title}
-                  </h3>
-                  <p className="mt-1 max-w-4xl text-3xl leading-tight text-brand-cream/55 sm:text-4xl md:text-5xl">
-                    {project.category}
-                  </p>
+                <div className={`relative h-64 overflow-hidden md:h-80 ${reverse ? "md:order-2" : ""}`}>
+                  <img
+                    src={project.image}
+                    alt={`${project.title} project`}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className={`absolute inset-0 bg-gradient-to-t from-brand-cream/95 via-brand-cream/35 to-transparent md:w-2/3 ${reverse ? "md:ml-auto md:bg-gradient-to-r md:from-brand-cream md:via-brand-cream/50 md:to-transparent" : "md:bg-gradient-to-l md:from-brand-cream md:via-brand-cream/50 md:to-transparent"}`}
+                  />
+                  <span className="absolute left-4 top-4 font-mono text-sm text-brand-cream drop-shadow sm:left-6 sm:top-6">
+                    0{i + 1}
+                  </span>
                 </div>
 
-                <div className="mt-10 max-w-4xl">
-                  <ul className="mb-6 flex flex-wrap gap-x-5 gap-y-2 text-xs text-brand-cream/75 sm:text-sm">
+                <div className={`relative z-10 px-2 md:px-8 ${reverse ? "md:order-1 md:pl-0" : "md:pr-0"}`}>
+                  <p className="mb-3 text-xs font-semibold uppercase text-brand-orange">{project.category}</p>
+                  <h3 className="max-w-xl text-3xl font-semibold leading-tight md:text-4xl">
+                    {project.title}
+                  </h3>
+                  <div className="my-5 flex flex-wrap gap-x-5 gap-y-2">
                     {project.metrics.map((metric) => (
-                      <li key={metric.value} className="whitespace-nowrap">
+                      <span key={metric.value} className="text-sm font-medium text-brand-navy/75">
                         {metric.value}
-                      </li>
+                      </span>
                     ))}
-                  </ul>
-                  {details && (
-                    <p className="flex items-start gap-3 text-sm leading-relaxed text-brand-cream/85 sm:text-base">
-                      <Sparkles aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-brand-orange" />
-                      <span>{details}</span>
-                    </p>
-                  )}
+                  </div>
+                  {details && <p className="max-w-lg text-sm leading-relaxed text-brand-navy/70 md:text-base">{details}</p>}
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-flex items-center gap-2 border-b border-brand-orange pb-1 text-sm font-semibold text-brand-navy transition-colors hover:text-brand-orange"
+                  >
+                    View project
+                    <ArrowUpRight aria-hidden="true" className="size-4" />
+                  </a>
                 </div>
               </motion.article>
             );
           })}
         </div>
 
-        <div className="flex justify-center">
+        <div className="mt-10 flex justify-center md:mt-14">
           <Button asChild className="bg-brand-orange px-6 text-brand-navy hover:bg-brand-orange/90">
             <Link to="/services">
-              Explore Our Services
+              Explore More
               <ArrowRight aria-hidden="true" />
             </Link>
           </Button>
