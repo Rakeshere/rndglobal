@@ -259,7 +259,7 @@ export default function ProjectsShowcase() {
                   />
                   <div
                     aria-hidden="true"
-                    className={`absolute inset-0 bg-gradient-to-t from-brand-cream/95 via-brand-cream/35 to-transparent md:w-2/3 ${reverse ? "md:ml-auto md:bg-gradient-to-l md:from-transparent md:via-brand-cream/50 md:to-brand-cream" : "md:bg-gradient-to-r md:from-transparent md:via-brand-cream/50 md:to-brand-cream"}`}
+                    className={`absolute inset-0 bg-gradient-to-t from-brand-cream/95 via-brand-cream/35 to-transparent md:w-2/3 ${reverse ? "md:ml-auto md:bg-gradient-to-r md:from-brand-cream md:via-brand-cream/50 md:to-transparent" : "md:bg-gradient-to-l md:from-brand-cream md:via-brand-cream/50 md:to-transparent"}`}
                   />
                   <span className="absolute left-4 top-4 font-mono text-sm text-brand-cream drop-shadow sm:left-6 sm:top-6">
                     0{i + 1}
