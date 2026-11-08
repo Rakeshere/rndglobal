@@ -246,7 +246,7 @@ export default function ProjectsShowcase() {
               <motion.article
                 key={project.id}
                 className={`group grid min-h-[25rem] items-center gap-6 py-8 md:min-h-[27rem] md:grid-cols-2 md:gap-0 md:py-10`}
-                initial={{ opacity: 0, y: 24 }}
+                initial={{ opacity: 1, y: 0 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: 0.04 }}
