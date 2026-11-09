@@ -1,247 +1,118 @@
-
 import Link from "@/muftlo/next/link";
-import { useEffect, useState, useRef } from "react";
-import { Search, Lightbulb, Megaphone, TrendingUp } from "lucide-react";
-import "./HeroSection.css";
+import { ArrowRight, Compass, Search, Sparkles, Target, TrendingUp } from "lucide-react";
 
-const JourneySection = () => {
-  const [visibleItems, setVisibleItems] = useState(new Set());
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const sectionRef = useRef(null);
+const processSteps = [
+  {
+    number: "01",
+    title: "Research",
+    description: "We learn your audience, market, competitors, and goals to uncover the clearest opportunities for your brand.",
+    tags: ["Audience insights", "Market landscape", "Competitor review"],
+    icon: Search,
+    side: "left",
+  },
+  {
+    number: "02",
+    title: "Define & plan",
+    description: "We turn those insights into a focused brand direction, practical priorities, and a roadmap built around your objectives.",
+    tags: ["Positioning", "Brand strategy", "Campaign roadmap"],
+    icon: Target,
+    side: "right",
+  },
+  {
+    number: "03",
+    title: "Design & create",
+    description: "We shape a memorable identity and make thoughtful content that gives your brand a consistent, recognizable voice.",
+    tags: ["Visual identity", "Content creation", "Brand voice"],
+    icon: Sparkles,
+    side: "left",
+  },
+  {
+    number: "04",
+    title: "Market & launch",
+    description: "We bring the plan to life across the right channels, coordinating campaigns, social content, search, and paid media.",
+    tags: ["Social media", "SEO & paid ads", "Campaign launch"],
+    icon: Compass,
+    side: "right",
+  },
+  {
+    number: "05",
+    title: "Measure & grow",
+    description: "We track what matters, learn from real performance, and keep improving so your brand can grow with confidence.",
+    tags: ["Clear reporting", "Ongoing optimization", "Sustainable growth"],
+    icon: TrendingUp,
+    side: "left",
+  },
+];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisibleItems((prev) =>
-              new Set(prev).add(entry.target.dataset.index)
-            );
-          }
-        });
-      },
-      { threshold: 0.3, rootMargin: "-50px" }
-    );
-
-    const cards = document.querySelectorAll("[data-journey-card]");
-    cards.forEach((card) => observer.observe(card));
-
-    const handleScroll = () => {
-      if (sectionRef.current) {
-        const rect = sectionRef.current.getBoundingClientRect();
-        const sectionHeight = sectionRef.current.offsetHeight;
-        const windowHeight = window.innerHeight;
-        const progress = Math.max(
-          0,
-          Math.min(
-            1,
-            (windowHeight - rect.top) / (sectionHeight + windowHeight)
-          )
-        );
-        setScrollProgress(progress);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
-    return () => {
-      cards.forEach((card) => observer.unobserve(card));
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const journeyData = [
-    {
-      title: "Research & Discovery",
-      icon: Search,
-      description:
-        "We begin by understanding your brand, market, and audience to build data-driven strategies that work.",
-      skills: [
-        "Market Analysis",
-        "Audience Insight",
-        "Competitor Study",
-        "Goal Setting",
-      ],
-      side: "left",
-    },
-    {
-      title: "Creative Strategy",
-      icon: Lightbulb,
-      description:
-        "Our team crafts a tailored marketing plan from brand voice to campaign concepts that connect emotionally.",
-      skills: [
-        "Brand Identity",
-        "Content Planning",
-        "Campaign Design",
-        "Messaging",
-      ],
-      side: "right",
-    },
-    {
-      title: "Execution & Marketing",
-      icon: Megaphone,
-      description:
-        "We bring your strategy to life across platforms social media, SEO, ads, and more ensuring maximum reach.",
-      skills: ["Social Media", "SEO & SEM", "Paid Ads", "Influencer Marketing"],
-      side: "left",
-    },
-    {
-      title: "Growth & Optimization",
-      icon: TrendingUp,
-      description:
-        "We track results, optimize campaigns, and help your brand scale sustainably with real-time analytics.",
-      skills: [
-        "Performance Tracking",
-        "A/B Testing",
-        "Analytics",
-        "Scale Strategy",
-      ],
-      side: "right",
-    },
-  ];
-
-  return (
-    <section
-      ref={sectionRef}
-      className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden text-white"
-    >
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white">
+const JourneySection = () => (
+  <section aria-labelledby="brand-process-title" className="relative overflow-hidden bg-brand-navy px-4 py-16 text-brand-cream sm:px-6 md:py-24">
+    <div className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-brand-orange/10 to-transparent" />
+    <div className="relative mx-auto max-w-7xl">
+      <div className="mb-12 grid gap-7 border-b border-brand-navy/15 pb-8 md:mb-16 md:grid-cols-[1fr_0.48fr] md:items-end md:gap-12 md:pb-10">
+        <div>
+          <p className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase text-brand-orange">
+            <span className="size-2 rounded-full bg-brand-orange" /> Our process
+          </p>
+          <h2 id="brand-process-title" className="max-w-3xl text-4xl font-extrabold leading-tight md:text-5xl">
             How We Bring Brands to Life
           </h2>
-          <p className="text-gray-400 text-base sm:text-lg max-w-3xl mx-auto mt-3">
-            A strategic journey from research to results — every step designed
-            to elevate your brand presence and drive impact.
-          </p>
         </div>
+        <p className="max-w-md text-sm leading-relaxed text-brand-cream/70 md:justify-self-end md:text-base">
+          From the first question to lasting momentum, every step is connected, purposeful, and shaped around your business.
+        </p>
+      </div>
 
-        <div className="relative">
-          <div
-            className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 rounded-full"
-            style={{
-              background: `linear-gradient(to bottom,
-                transparent 0%,
-                rgba(200,200,200,0.8) ${scrollProgress * 100}%,
-                rgba(120,120,120,0.4) 100%)`,
-              boxShadow: "0 0 15px rgba(180,180,180,0.3)",
-            }}
-          />
-
-          <div className="space-y-16">
-            {journeyData.map((journey, index) => (
-              <div
-                key={index}
-                data-journey-card
-                data-index={index}
-                className={`flex flex-col lg:flex-row items-center ${
-                  journey.side === "right" ? "lg:flex-row-reverse" : ""
-                }`}
+      <div className="relative">
+        <div aria-hidden="true" className="absolute bottom-10 left-1/2 top-10 hidden w-px -translate-x-1/2 bg-brand-cream/20 lg:block" />
+        <div className="space-y-6 md:space-y-8">
+          {processSteps.map((step) => {
+            const Icon = step.icon;
+            const reversed = step.side === "right";
+            return (
+              <article
+                key={step.number}
+                className="relative grid items-center gap-5 md:gap-8 lg:grid-cols-[1fr_auto_1fr]"
               >
-                <div
-                  className={`w-full lg:w-1/2 ${
-                    journey.side === "right" ? "lg:pl-12" : "lg:pr-12"
-                  } mb-8 lg:mb-0 transition-all duration-1000 ease-[cubic-bezier(0.19,1,0.22,1)] ${
-                    visibleItems.has(index.toString())
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-12"
-                  }`}
-                >
-                  <div
-                    className="
-    relative p-8 rounded-2xl overflow-hidden group
-    backdrop-blur-xl
-    bg-white/5
-    border border-white/10
-    transition-all duration-700
-    shadow-[0_0_25px_rgba(255,255,255,0.07)]
-    hover:shadow-[0_0_45px_rgba(255,255,255,0.12)]
-  "
-                  >
-                    <div
-                      className="
-      absolute inset-0
-      bg-gradient-to-br from-white/20 via-transparent to-white/5
-      opacity-20 group-hover:opacity-40
-      transition-opacity duration-700
-      pointer-events-none
-    "
-                    />
-
-                    <div
-                      className="
-      absolute -top-1/2 left-0 w-full h-full
-     
-      rotate-12
-      transition-transform duration-1000 ease-out
-      pointer-events-none
-    "
-                    />
-                    <h3 className="text-2xl font-semibold text-white mb-3 flex items-center gap-3">
-                      <journey.icon
-                        className="w-6 h-6 text-gray-300 
-    transition-all duration-300 ease-out
-    group-hover:rotate-12"
-                      />
-                      {journey.title}
-                    </h3>
-                    <p className="text-gray-300 mb-6 leading-relaxed">
-                      {journey.description}
-                    </p>
-                    <div className="grid grid-cols-2 gap-3">
-                      {journey.skills.map((skill, i) => (
-                        <div
-                          key={i}
-                          className="bg-white/5 border border-gray-700/50 
-                            text-gray-200 text-xs sm:text-sm px-3 py-2 
-                            rounded-lg text-center font-medium 
-                            hover:bg-white/10 transition duration-400"
-                        >
-                          {skill}
-                        </div>
-                      ))}
+                <div className={`relative overflow-hidden rounded-lg border border-brand-cream/15 bg-brand-navy/90 p-5 shadow-sm transition-colors duration-300 hover:border-brand-orange/50 sm:p-7 md:p-8 ${reversed ? "lg:col-start-3" : "lg:col-start-1"}`}>
+                  <div className="absolute inset-y-0 left-0 w-1 bg-brand-orange" />
+                  <div className="flex items-start gap-4">
+                    <span className="flex size-11 shrink-0 items-center justify-center rounded-md bg-brand-orange/10 text-brand-orange">
+                      <Icon aria-hidden="true" className="size-5" />
+                    </span>
+                    <div className="min-w-0">
+                      <p className="mb-1 text-xs font-semibold uppercase text-brand-orange">Step {step.number}</p>
+                      <h3 className="text-xl font-bold text-brand-cream sm:text-2xl">{step.title}</h3>
                     </div>
                   </div>
+                  <p className="mt-4 max-w-xl text-sm leading-relaxed text-brand-cream/75 sm:text-base">{step.description}</p>
+                  <ul className="mt-5 flex flex-wrap gap-2">
+                    {step.tags.map((tag) => (
+                      <li key={tag} className="rounded-sm border border-brand-cream/15 bg-brand-cream/5 px-3 py-1.5 text-xs font-medium text-brand-cream/75">{tag}</li>
+                    ))}
+                  </ul>
                 </div>
-
-                <div className="hidden lg:block relative z-10">
-                  <div
-                    className={`w-5 h-5 bg-gray-400 rounded-full border-4 border-[#1a1a1a] shadow-[0_0_15px_rgba(200,200,200,0.5)] transition-all duration-700 ${
-                      visibleItems.has(index.toString())
-                        ? "scale-110 opacity-100"
-                        : "scale-75 opacity-60"
-                    }`}
-                  ></div>
+                <div className="hidden size-10 items-center justify-center rounded-full border-4 border-brand-navy bg-brand-orange text-sm font-bold text-brand-navy shadow-md lg:col-start-2 lg:row-start-1 lg:flex">
+                  {step.number}
                 </div>
-
-                <div className="hidden lg:block lg:w-1/2"></div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="flex items-center justify-center mt-15">
-          <Link href="/contact">
-            <button
-              className="
-                  bounce-animation
-                  relative inline-flex items-center justify-center
-                  px-4 sm:px-10 py-2 sm:py-4 mt-3
-                  text-white font-semibold text-base sm:text-lg
-                  bg-white/20 rounded-full cursor-pointer
-                  shadow-md hover:shadow-lg hover:bg-white/25
-                  transition-all duration-300 overflow-hidden group
-                "
-            >
-              <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-              <span className="relative z-10">Discuss Your Project</span>
-            </button>
-          </Link>
+                <div aria-hidden="true" className={`hidden h-px bg-brand-orange/45 lg:block ${reversed ? "lg:col-start-1 lg:row-start-1" : "lg:col-start-3 lg:row-start-1"}`}>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
-    </section>
-  );
-};
+
+      <div className="mt-12 flex justify-center md:mt-16">
+        <Link
+          href="/contact"
+          className="inline-flex items-center gap-3 rounded-md bg-brand-orange px-6 py-3 text-sm font-semibold text-brand-navy transition-colors hover:bg-brand-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2"
+        >
+          Let’s build your next chapter
+          <ArrowRight aria-hidden="true" className="size-4" />
+        </Link>
+      </div>
+    </div>
+  </section>
+);
 
 export default JourneySection;
