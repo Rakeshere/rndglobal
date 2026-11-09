@@ -1,5 +1,5 @@
 import Link from "@/muftlo/next/link";
-import { ArrowDown, ArrowRight, Compass, Lightbulb, Search, Sparkles, Target, TrendingUp } from "lucide-react";
+import { ArrowRight, Compass, Search, Sparkles, Target, TrendingUp } from "lucide-react";
 
 const processSteps = [
   {
@@ -45,8 +45,8 @@ const processSteps = [
 ];
 
 const JourneySection = () => (
-  <section aria-labelledby="brand-process-title" className="relative overflow-hidden bg-brand-cream px-4 py-16 text-brand-navy sm:px-6 md:py-24">
-    <div className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-brand-orange/5 to-transparent" />
+  <section aria-labelledby="brand-process-title" className="relative overflow-hidden bg-brand-navy px-4 py-16 text-brand-cream sm:px-6 md:py-24">
+    <div className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-brand-orange/10 to-transparent" />
     <div className="relative mx-auto max-w-7xl">
       <div className="mb-12 grid gap-7 border-b border-brand-navy/15 pb-8 md:mb-16 md:grid-cols-[1fr_0.48fr] md:items-end md:gap-12 md:pb-10">
         <div>
@@ -57,23 +57,23 @@ const JourneySection = () => (
             How We Bring Brands to Life
           </h2>
         </div>
-        <p className="max-w-md text-sm leading-relaxed text-brand-navy/70 md:justify-self-end md:text-base">
+        <p className="max-w-md text-sm leading-relaxed text-brand-cream/70 md:justify-self-end md:text-base">
           From the first question to lasting momentum, every step is connected, purposeful, and shaped around your business.
         </p>
       </div>
 
       <div className="relative">
-        <div aria-hidden="true" className="absolute bottom-10 left-1/2 top-10 hidden w-px -translate-x-1/2 bg-brand-navy/15 lg:block" />
+        <div aria-hidden="true" className="absolute bottom-10 left-1/2 top-10 hidden w-px -translate-x-1/2 bg-brand-cream/20 lg:block" />
         <div className="space-y-6 md:space-y-8">
-          {processSteps.map((step, index) => {
+          {processSteps.map((step) => {
             const Icon = step.icon;
             const reversed = step.side === "right";
             return (
               <article
                 key={step.number}
-                className={`relative grid items-center gap-5 md:gap-8 lg:grid-cols-[1fr_auto_1fr] ${reversed ? "lg:[&>div:first-child]:order-3" : ""}`}
+                className="relative grid items-center gap-5 md:gap-8 lg:grid-cols-[1fr_auto_1fr]"
               >
-                <div className={`relative overflow-hidden rounded-lg border border-brand-navy/10 bg-background p-5 shadow-sm transition-shadow duration-300 hover:shadow-md sm:p-7 md:p-8 ${reversed ? "lg:col-start-3" : "lg:col-start-1"}`}>
+                <div className={`relative overflow-hidden rounded-lg border border-brand-cream/15 bg-brand-navy/90 p-5 shadow-sm transition-colors duration-300 hover:border-brand-orange/50 sm:p-7 md:p-8 ${reversed ? "lg:col-start-3" : "lg:col-start-1"}`}>
                   <div className="absolute inset-y-0 left-0 w-1 bg-brand-orange" />
                   <div className="flex items-start gap-4">
                     <span className="flex size-11 shrink-0 items-center justify-center rounded-md bg-brand-orange/10 text-brand-orange">
@@ -81,21 +81,20 @@ const JourneySection = () => (
                     </span>
                     <div className="min-w-0">
                       <p className="mb-1 text-xs font-semibold uppercase text-brand-orange">Step {step.number}</p>
-                      <h3 className="text-xl font-bold sm:text-2xl">{step.title}</h3>
+                      <h3 className="text-xl font-bold text-brand-cream sm:text-2xl">{step.title}</h3>
                     </div>
                   </div>
-                  <p className="mt-4 max-w-xl text-sm leading-relaxed text-brand-navy/75 sm:text-base">{step.description}</p>
+                  <p className="mt-4 max-w-xl text-sm leading-relaxed text-brand-cream/75 sm:text-base">{step.description}</p>
                   <ul className="mt-5 flex flex-wrap gap-2">
                     {step.tags.map((tag) => (
-                      <li key={tag} className="rounded-sm border border-brand-navy/10 bg-brand-cream px-3 py-1.5 text-xs font-medium text-brand-navy/75">{tag}</li>
+                      <li key={tag} className="rounded-sm border border-brand-cream/15 bg-brand-cream/5 px-3 py-1.5 text-xs font-medium text-brand-cream/75">{tag}</li>
                     ))}
                   </ul>
                 </div>
-                <div className={`hidden size-10 items-center justify-center rounded-full border-4 border-brand-cream bg-brand-orange text-sm font-bold text-brand-navy shadow-md lg:flex ${reversed ? "lg:col-start-2 lg:row-start-1" : "lg:col-start-2 lg:row-start-1"}`}>
+                <div className="hidden size-10 items-center justify-center rounded-full border-4 border-brand-navy bg-brand-orange text-sm font-bold text-brand-navy shadow-md lg:col-start-2 lg:row-start-1 lg:flex">
                   {step.number}
                 </div>
                 <div aria-hidden="true" className={`hidden h-px bg-brand-orange/45 lg:block ${reversed ? "lg:col-start-1 lg:row-start-1" : "lg:col-start-3 lg:row-start-1"}`}>
-                  <span className="sr-only">{index + 1}</span>
                 </div>
               </article>
             );
@@ -106,11 +105,10 @@ const JourneySection = () => (
       <div className="mt-12 flex justify-center md:mt-16">
         <Link
           href="/contact"
-          className="inline-flex items-center gap-3 rounded-md bg-brand-navy px-6 py-3 text-sm font-semibold text-brand-cream transition-colors hover:bg-brand-orange hover:text-brand-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2"
+          className="inline-flex items-center gap-3 rounded-md bg-brand-orange px-6 py-3 text-sm font-semibold text-brand-navy transition-colors hover:bg-brand-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2"
         >
           Let’s build your next chapter
           <ArrowRight aria-hidden="true" className="size-4" />
-          <ArrowDown aria-hidden="true" className="sr-only" />
         </Link>
       </div>
     </div>
